@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create User</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-4">Create User</h1>
+    <form th:action="@{/users}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" th:field="*{username}" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Enter email">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="/users" class="btn btn-secondary mt-3">Cancel</a>
+</div>
+</body>
+</html>
